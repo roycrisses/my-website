@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', sans-serif;
+    --font-hand: 'Caveat', cursive;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #FAF9F5;
+    color: #18181B;
+  }
+}
+
+/* Scrapbook Graph Paper Grid */
+.bg-grid-paper {
+  background-color: #FAF9F5;
+  background-image: 
+    linear-gradient(to right, rgba(24, 24, 27, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 24, 27, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-dot-paper {
+  background-color: #FAF9F5;
+  background-image: radial-gradient(rgba(24, 24, 27, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Washi Tape and Paper Craft Accents */
+.tape-top {
+  position: relative;
+}
+.tape-top::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 90px;
+  height: 24px;
+  background-color: rgba(254, 240, 138, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(202, 138, 4, 0.3);
+  border-right: 2px dashed rgba(202, 138, 4, 0.3);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.tape-corner-left {
+  position: relative;
+}
+.tape-corner-left::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -12px;
+  transform: rotate(-35deg);
+  width: 60px;
+  height: 20px;
+  background-color: rgba(187, 247, 208, 0.85);
+  border-left: 1px dashed rgba(22, 101, 52, 0.3);
+  border-right: 1px dashed rgba(22, 101, 52, 0.3);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.tape-corner-right {
+  position: relative;
+}
+.tape-corner-right::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  transform: rotate(35deg);
+  width: 60px;
+  height: 20px;
+  background-color: rgba(254, 205, 211, 0.85);
+  border-left: 1px dashed rgba(159, 18, 57, 0.3);
+  border-right: 1px dashed rgba(159, 18, 57, 0.3);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Font helpers */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* Neo-brutalist tactile shadows */
+.brutal-shadow {
+  box-shadow: 4px 4px 0px 0px #18181B;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #18181B;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 6px 6px 0px 0px #18181B;
+}
+
+.brutal-shadow-hover {
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.brutal-shadow-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #18181B;
+}
+.brutal-shadow-hover:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #18181B;
+}
+
+/* Custom scrollbar for aesthetic fidelity */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F5;
+  border-left: 1px solid rgba(24, 24, 27, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: #E4E4E7;
+  border: 2px solid #FAF9F5;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
